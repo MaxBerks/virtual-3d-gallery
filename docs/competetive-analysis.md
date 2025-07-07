@@ -98,11 +98,6 @@ To analyze existing virtual gallery platforms and identify their strengths and w
 - Descriptions near the paintings are text-heavy  
 - Layout is disorienting; easy to lose sense of direction after entry  
 - No option to disable VR view on mobile
----
-
-### What My Project Does Differently
-
-- 
 
 ---
 
