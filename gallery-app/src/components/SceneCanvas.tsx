@@ -6,7 +6,7 @@ import { OrbitControls } from '@react-three/drei'
 import Lighting from './Lighting'
 import Room from './Room'
 import Painting from './Painting'
-import PlayerController from './PlayerController'
+import UserController from './UserController'
 
 export default function SceneCanvas() {
     return (
@@ -14,7 +14,7 @@ export default function SceneCanvas() {
             <Lighting />
             <Room />
             <Painting position={[0, 1.5, -4.9]} textureUrl="/textures/example.jpg" />
-            <PlayerController />
+            <UserController />
         </Canvas>
     )
 }
