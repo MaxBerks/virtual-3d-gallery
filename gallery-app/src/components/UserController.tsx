@@ -7,14 +7,14 @@ import * as THREE from 'three'
 export default function PlayerController() {
     const { camera, gl } = useThree()
 
-    // кути огляду
-    const yaw = useRef(0)    // навколо Y (ліво/право)
-    const pitch = useRef(0)  // навколо X (вгору/вниз)
+
+    const yaw = useRef(0)
+    const pitch = useRef(0)
     const dragging = useRef(false)
     const last = useRef<{ x: number; y: number } | null>(null)
 
     const SENS = 0.003
-    const PITCH_LIMIT = Math.PI / 2 - 0.001 // щоб не "вивертало"
+    const PITCH_LIMIT = Math.PI / 2 - 0.001
 
     useEffect(() => {
         const el = gl.domElement
@@ -43,10 +43,8 @@ export default function PlayerController() {
             el.style.cursor = 'grab'
         }
 
-        const onContext = (e: MouseEvent) => e.preventDefault() // без контекст-меню
+        const onContext = (e: MouseEvent) => e.preventDefault()
 
-        // touch-підтримка
-        // 
 
 
         el.addEventListener('mousedown', onMouseDown)
@@ -74,8 +72,6 @@ export default function PlayerController() {
     useFrame(() => {
         const euler = new THREE.Euler(pitch.current, yaw.current, 0, 'YXZ')
         camera.quaternion.setFromEuler(euler)
-        // якщо треба фіксована висота:
-        // camera.position.y = 1.6
     })
 
     return null
